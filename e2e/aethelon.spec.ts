@@ -67,9 +67,10 @@ test.describe("Aethelon Site E2E Tests", () => {
     await expect(page.locator("text=30%").first()).toBeVisible();
 
     // Check tier pricing values
-    await expect(page.locator("text=$2,000").first()).toBeVisible();
-    await expect(page.locator("text=$4,000").first()).toBeVisible();
-    await expect(page.locator("text=$5,000").first()).toBeVisible();
+    await expect(page.locator("text=$2,500").first()).toBeVisible();
+    await expect(page.locator("text=$4,500").first()).toBeVisible();
+    await expect(page.locator("text=$6,000").first()).toBeVisible();
+    await expect(page.locator("text=$10,000+").first()).toBeVisible();
 
     // Verify pull quote
     const pullQuote = page

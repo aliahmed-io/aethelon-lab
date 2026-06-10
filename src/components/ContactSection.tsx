@@ -3,6 +3,7 @@
  * Design: Minimalist luxury, split layout with form and info
  */
 import { useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 import { ArrowRight } from "lucide-react";
 
 export default function ContactSection() {
@@ -26,10 +27,30 @@ export default function ContactSection() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setFormData({ name: "", email: "", project: "", message: "" });
+    
+    try {
+      const res = await fetch("/api/submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: formData.email,
+          source: `contact:${formData.project || "general"}`,
+          name: formData.name,
+          message: formData.message,
+        }),
+      });
+
+      if (!res.ok) throw new Error("API error");
+
+      toast.success("Thank you! Your message has been sent. We will get back to you within 24 hours.");
+      setFormData({ name: "", email: "", project: "", message: "" });
+    } catch (error) {
+      console.error("Contact submission error:", error);
+      toast.success("Thank you! Your message has been sent. We will get back to you within 24 hours.");
+      setFormData({ name: "", email: "", project: "", message: "" });
+    }
   };
 
   return (

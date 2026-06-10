@@ -10,7 +10,7 @@ const MILESTONES = [
     phase: "Kickoff",
     percentage: "20%",
     duration: "Week 1",
-    pricing: "Starter: $400 | Core: $800 | Full: $1,000",
+    pricing: "Starter: $500 | Core: $900 | Full: $1,200 | Enterprise: Custom",
     description:
       "Brief signed, credentials shared, project starts, and initial environment setups are established.",
     deliverables: [
@@ -24,7 +24,7 @@ const MILESTONES = [
     phase: "Design Approval",
     percentage: "30%",
     duration: "Week 2-3",
-    pricing: "Starter: $600 | Core: $1,200 | Full: $1,500",
+    pricing: "Starter: $750 | Core: $1,350 | Full: $1,800 | Enterprise: Custom",
     description:
       "You review and approve high-fidelity UI design mockups and design systems before any frontend development begins.",
     deliverables: [
@@ -38,7 +38,7 @@ const MILESTONES = [
     phase: "Staging Deploy",
     percentage: "30%",
     duration: "Week 4-6",
-    pricing: "Starter: $600 | Core: $1,200 | Full: $1,500",
+    pricing: "Starter: $750 | Core: $1,350 | Full: $1,800 | Enterprise: Custom",
     description:
       "Frontend architecture is fully developed and deployed to a staging environment with all features and integrations active.",
     deliverables: [
@@ -52,7 +52,7 @@ const MILESTONES = [
     phase: "Launch",
     percentage: "20%",
     duration: "Week 7-8",
-    pricing: "Starter: $400 | Core: $800 | Full: $1,000",
+    pricing: "Starter: $500 | Core: $900 | Full: $1,200 | Enterprise: Custom",
     description:
       "Production build deployed, domain mapped, security hardening completed, and final project handover finished.",
     deliverables: [
@@ -176,7 +176,7 @@ export default function MilestonePlan() {
 
   return (
     <section
-      id="process"
+      id="milestones"
       className="bg-[#F8F6F2] section-spacing border-t border-[#141312]/5"
     >
       <div className="container">
@@ -208,7 +208,7 @@ export default function MilestonePlan() {
         <div className="mb-16 max-w-3xl border-l-2 border-[#C5A880] bg-[#141312]/5 p-8 relative overflow-hidden">
           <Quote className="absolute right-6 top-6 text-[#C5A880]/10 w-24 h-24 pointer-events-none" />
           <p className="font-display text-lg italic text-[#141312] leading-relaxed mb-4 relative z-10">
-            "You start with $400. You only pay the next installment after you've
+            "You start with $500. You only pay the next installment after you've
             approved what was built. If at any point you're not satisfied, we
             stop — you've only paid for what was delivered."
           </p>

@@ -10,12 +10,11 @@ const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Performance Reports", href: "/case-studies" },
   { label: "Blog", href: "#blog" },
-  { label: "About", href: "/about" },
+  { label: "Contact", href: "#contact" },
+  { label: "Performance Reports", href: "/case-studies" },
   { label: "FAQ", href: "/faq" },
   { label: "Retainer", href: "/retainer" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -30,11 +29,21 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
-    if (href.startsWith("/")) {
-      window.location.href = href;
+    if (href === "#services") {
+      return;
+    }
+    const isHomePage = window.location.pathname === "/";
+    if (href.startsWith("#")) {
+      if (isHomePage) {
+        const el = document.querySelector(href);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+      }
+      window.location.href = "/" + href;
     } else {
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+      window.location.href = href;
     }
   };
 
@@ -51,11 +60,13 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a
-              href="#"
+              href="/"
               className="group flex items-center"
               onClick={e => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                if (window.location.pathname === "/") {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
               }}
             >
               <span
@@ -83,7 +94,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-4">
               <button
                 onClick={() => handleNavClick("#contact")}
-                className="btn-elegant border-[#141312] text-[#141312] hover:border-[#C5A880]"
+                className="btn-elegant hover:border-[#C5A880]"
               >
                 Begin a Project
               </button>
@@ -134,7 +145,7 @@ export default function Navbar() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: navLinks.length * 0.05 }}
                 onClick={() => handleNavClick("#contact")}
-                className="mt-8 btn-elegant w-full text-center py-4 border-[#141312] text-[#141312]"
+                className="mt-8 btn-elegant w-full text-center py-4 hover:border-[#C5A880]"
               >
                 Begin a Project
               </motion.button>

@@ -158,7 +158,7 @@ export default function EngagementProcess() {
   }, []);
 
   return (
-    <section className="bg-[#F8F6F2] section-spacing">
+    <section id="process" className="bg-[#F8F6F2] section-spacing">
       <div className="container">
         <div
           ref={titleRef}
@@ -170,7 +170,10 @@ export default function EngagementProcess() {
               "opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
           }}
         >
-          <h2 className="heading-lg text-[#141312] mb-4">How We Work</h2>
+          <span className="font-label text-xs tracking-widest text-[#C5A880] uppercase block mb-3">
+            Our Process
+          </span>
+          <h2 className="heading-lg text-[#141312] mb-4">What Will Happen</h2>
           <p className="font-body text-[#141312]/60">
             A transparent, collaborative process. You're involved at every step.
             No black boxes. No surprises.

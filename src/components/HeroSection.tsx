@@ -281,7 +281,7 @@ export default function HeroSection() {
                   .querySelector("#contact")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="btn-elegant border-[#141312] bg-[#141312] text-[#F8F6F2]"
+              className="btn-elegant border-[#141312] bg-[#141312] text-[#F8F6F2] hover:bg-transparent hover:text-[#141312]"
             >
               See the Demo
             </button>
@@ -291,7 +291,7 @@ export default function HeroSection() {
                   .querySelector("#pricing")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="btn-elegant border-[#141312] bg-transparent text-[#141312] hover:text-[#141312]"
+              className="btn-elegant border-[#141312] bg-transparent text-[#141312] hover:bg-[#141312] hover:text-[#F8F6F2]"
             >
               View Pricing
             </button>

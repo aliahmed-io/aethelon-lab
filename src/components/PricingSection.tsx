@@ -8,8 +8,8 @@ import { Check } from "lucide-react";
 const TIERS = [
   {
     name: "Starter",
-    price: "$2,000",
-    deposit: "$400",
+    price: "$2,500",
+    deposit: "$500",
     bestFor:
       "Single or small product stores that need a fast, modern, conversion-ready frontend without AR/3D",
     includes: [
@@ -17,8 +17,11 @@ const TIERS = [
       "Custom responsive design",
       "Product pages, collections, cart, checkout",
       "Basic search and filters",
-      "Newsletter signup integration",
-      "SEO setup and Core Web Vitals optimized",
+      "Newsletter signup and welcome flow",
+      "Cart recovery email sequence (2-stage, 1h and 24h)",
+      "Blog and SEO infrastructure",
+      "Security audit and vulnerability patch",
+      "Multi-language and multi-currency ready",
       "2 weeks free post-launch maintenance",
     ],
     retainer: "$200/month",
@@ -26,37 +29,57 @@ const TIERS = [
   },
   {
     name: "Core",
-    price: "$4,000",
-    deposit: "$800",
+    price: "$4,500",
+    deposit: "$900",
     bestFor:
       "Furniture and décor stores ready to offer AR and 3D as a competitive advantage",
     includes: [
       "Everything in Starter",
+      "Wall and floor AR product preview (mobile)",
+      "Desktop AR room photo compositing (works on all devices)",
       "10 custom 3D models for top sellers",
-      "AR product preview (mobile and desktop)",
-      "Advanced search, filters, and sort",
-      "Cart recovery email sequence",
+      "AI semantic search (understands intent not just keywords)",
+      "Voice search",
+      "AR snapshot sharing",
       "Landing page",
-      "Security audit and vulnerability patch",
     ],
     retainer: "$300/month",
     highlighted: true,
   },
   {
     name: "Full",
-    price: "$5,000",
-    deposit: "$1,000",
+    price: "$6,000",
+    deposit: "$1,200",
     bestFor:
       "Stores that want the complete system — AR, content engine, and automated revenue tools",
     includes: [
       "Everything in Core",
-      "Blog (SEO-optimized, CMS-connected)",
-      "Newsletter welcome flow and automation",
-      "AI chatbot",
-      "Extended onboarding documentation",
-      "Priority deployment support",
+      "AI room analysis (Gemini Vision — analyzes customer room photo, recommends products and placement)",
+      "AI storefront chatbot (trained on catalog, answers 24/7)",
+      "Campaign generator and email blast system",
+      "Priority deployment and extended onboarding documentation",
     ],
     retainer: "$500/month — Pro Support",
+    highlighted: false,
+  },
+  {
+    name: "Enterprise",
+    price: "$10,000+",
+    deposit: "Custom",
+    bestFor:
+      "Enterprise is for brands that want to own a fully custom platform with no dependency on Shopify or WooCommerce — ever.",
+    includes: [
+      "Everything in Full",
+      "Fully custom Next.js backend (no Shopify/WooCommerce dependency)",
+      "Custom admin dashboard built to client workflow",
+      "AI COO dashboard (daily sales briefings, inventory forecasting, sentiment analysis)",
+      "Generative 3D pipeline (generate 3D models from 2D product images via Meshy)",
+      "Role-based access control for teams",
+      "Custom database architecture (Postgres + Prisma)",
+      "Full infrastructure setup and deployment",
+      "Complete IP ownership — no platform dependency ever",
+    ],
+    retainer: "Custom Retainer",
     highlighted: false,
   },
 ];
@@ -240,7 +263,7 @@ export default function PricingSection() {
         </div>
 
         {/* Pricing Tiers */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 items-stretch">
           {TIERS.map((tier, i) => (
             <PricingTier key={tier.name} tier={tier} index={i} />
           ))}
@@ -279,26 +302,26 @@ export default function PricingSection() {
               {
                 milestone: "Kickoff",
                 percent: "20%",
-                values: "Starter: $400 | Core: $800 | Full: $1,000",
+                values: "Starter: $500 | Core: $900 | Full: $1,200 | Enterprise: Custom",
                 trigger: "Brief signed, credentials shared, project starts",
               },
               {
                 milestone: "Design Approval",
                 percent: "30%",
-                values: "Starter: $600 | Core: $1,200 | Full: $1,500",
+                values: "Starter: $750 | Core: $1,350 | Full: $1,800 | Enterprise: Custom",
                 trigger: "You approve the high-fidelity UI design mockups",
               },
               {
                 milestone: "Staging Deploy",
                 percent: "30%",
-                values: "Starter: $600 | Core: $1,200 | Full: $1,500",
+                values: "Starter: $750 | Core: $1,350 | Full: $1,800 | Enterprise: Custom",
                 trigger:
                   "Complete site live on staging with all features working",
               },
               {
                 milestone: "Launch",
                 percent: "20%",
-                values: "Starter: $400 | Core: $800 | Full: $1,000",
+                values: "Starter: $500 | Core: $900 | Full: $1,200 | Enterprise: Custom",
                 trigger:
                   "Production build deployed, domain mapped, project handover complete",
               },

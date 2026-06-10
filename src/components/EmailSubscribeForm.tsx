@@ -22,23 +22,18 @@ export default function EmailSubscribeForm() {
     setLoading(true);
 
     try {
-      // Brevo API integration
-      // Replace YOUR_BREVO_API_KEY with your actual Brevo API key from https://app.brevo.com/settings/keys/api
-      const response = await fetch("https://api.brevo.com/v3/contacts", {
+      const response = await fetch("/api/submissions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "api-key": "YOUR_BREVO_API_KEY",
         },
         body: JSON.stringify({
           email: email,
-          listIds: [2],
-          updateEnabled: true,
+          source: "newsletter",
         }),
       });
 
-      if (response.ok || response.status === 409) {
-        // 409 means contact already exists, which is fine
+      if (response.ok) {
         toast.success(
           "Thanks for subscribing! Check your email for confirmation."
         );
@@ -102,11 +97,6 @@ export default function EmailSubscribeForm() {
           {loading ? "Subscribing..." : "Subscribe"}
         </button>
       </div>
-
-      <p className="font-body text-xs text-[#F8F6F2]/40 mt-4">
-        Note: To enable email subscriptions, add your Brevo API key to the form.
-        Get it at https://app.brevo.com/settings/keys/api
-      </p>
     </form>
   );
 }

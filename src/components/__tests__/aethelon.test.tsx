@@ -76,16 +76,19 @@ describe("Aethelon Website Component Requirements", () => {
     expect(screen.queryAllByText(/20%/i).length).toBeGreaterThan(0);
 
     // Starter tier pricing
-    expect(screen.queryAllByText(/\$2,000/i).length).toBeGreaterThan(0);
-    expect(screen.queryAllByText(/\$400/i).length).toBeGreaterThan(0);
+    expect(screen.queryAllByText(/\$2,500/i).length).toBeGreaterThan(0);
+    expect(screen.queryAllByText(/\$500/i).length).toBeGreaterThan(0);
 
     // Core tier pricing
-    expect(screen.queryAllByText(/\$4,000/i).length).toBeGreaterThan(0);
-    expect(screen.queryAllByText(/\$800/i).length).toBeGreaterThan(0);
+    expect(screen.queryAllByText(/\$4,500/i).length).toBeGreaterThan(0);
+    expect(screen.queryAllByText(/\$900/i).length).toBeGreaterThan(0);
 
     // Full tier pricing
-    expect(screen.queryAllByText(/\$5,000/i).length).toBeGreaterThan(0);
-    expect(screen.queryAllByText(/\$1,000/i).length).toBeGreaterThan(0);
+    expect(screen.queryAllByText(/\$6,000/i).length).toBeGreaterThan(0);
+    expect(screen.queryAllByText(/\$1,200/i).length).toBeGreaterThan(0);
+
+    // Enterprise tier pricing
+    expect(screen.queryAllByText(/\$10,000\+/i).length).toBeGreaterThan(0);
 
     // Pull quote verification
     const pullQuoteText =

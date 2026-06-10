@@ -24,7 +24,7 @@ const FAQS = [
   {
     question: "What are the ongoing retainer costs?",
     answer:
-      "Ongoing maintenance, updates, and support are handled via monthly retainers: Starter is $200/month, Core is $300/month, and Full is $500/month.",
+      "Ongoing maintenance, updates, and support are handled via monthly retainers: Starter is $200/month, Core is $300/month, Full is $500/month, and Enterprise is custom.",
   },
   {
     question: "Can I upgrade to AR/3D later?",

@@ -172,8 +172,8 @@ export default function WhyAethelon() {
         </div>
 
         {/* Side-by-Side Comparison Table */}
-        <div className="max-w-4xl mx-auto border border-[#141312]/10 bg-white/30 backdrop-blur-sm p-8">
-          <h3 className="font-display text-2xl text-[#141312] mb-8 font-semibold text-center">
+        <div className="w-full border border-[#141312]/10 bg-white/30 backdrop-blur-sm p-8 md:p-12">
+          <h3 className="font-display text-2xl md:text-3xl text-[#141312] mb-10 font-semibold text-center">
             How We Compare
           </h3>
           <div className="overflow-x-auto">
@@ -200,19 +200,23 @@ export default function WhyAethelon() {
                     <td className="py-4 font-semibold text-[#141312]">
                       {item.feature}
                     </td>
-                    <td className="py-4 text-[#141312]/60 pl-4 flex items-start gap-2">
-                      <X
-                        size={14}
-                        className="text-red-500 mt-1 flex-shrink-0"
-                      />
-                      <span>{item.generic}</span>
+                    <td className="py-4 text-[#141312]/60 pl-4">
+                      <div className="flex items-start gap-2">
+                        <X
+                          size={14}
+                          className="text-red-500 mt-1 flex-shrink-0"
+                        />
+                        <span>{item.generic}</span>
+                      </div>
                     </td>
-                    <td className="py-4 text-[#141312] pl-4 font-medium bg-[#C5A880]/5 flex items-start gap-2">
-                      <Check
-                        size={14}
-                        className="text-[#C5A880] mt-1 flex-shrink-0"
-                      />
-                      <span>{item.aethelon}</span>
+                    <td className="py-4 text-[#141312] pl-4 font-medium bg-[#C5A880]/5">
+                      <div className="flex items-start gap-2">
+                        <Check
+                          size={14}
+                          className="text-[#C5A880] mt-1 flex-shrink-0"
+                        />
+                        <span>{item.aethelon}</span>
+                      </div>
                     </td>
                   </tr>
                 ))}

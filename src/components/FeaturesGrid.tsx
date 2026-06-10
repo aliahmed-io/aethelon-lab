@@ -5,104 +5,104 @@
  */
 import { useEffect, useRef, useState } from "react";
 import {
-  Zap,
   Box,
+  Monitor,
+  Sparkles,
   Search,
-  Mail,
-  MessageSquare,
-  Palette,
-  Globe,
-  Lock,
-  Settings,
-  FileText,
-  Smartphone,
+  Mic,
+  Cpu,
   TrendingUp,
+  LineChart,
+  Share2,
+  Mail,
+  FileText,
+  Lock,
 } from "lucide-react";
 
 const FEATURES = [
   {
     number: "01",
-    title: "Next.js Headless Frontend",
+    title: "Wall + Floor AR Preview",
     description:
-      "Lightning-fast storefront connected to Shopify/WooCommerce backend. Delivers up to 70% faster loading (Source: Vercel Engineering, 2024).",
-    icon: Zap,
-  },
-  {
-    number: "02",
-    title: "AR Product Preview",
-    description:
-      "Spatial room placement via mobile camera. 94% higher conversion rates (Shopify, 2025), 40% fewer returns (BrandXR, 2025).",
+      "Customers place your products on walls and floors in their actual room before buying. 94% higher conversion rate on products with AR (Shopify, 2025).",
     icon: Box,
   },
   {
-    number: "03",
-    title: "3D Product Models",
+    number: "02",
+    title: "Desktop AR Compositing",
     description:
-      "Interactive rotatable assets. 94% higher conversion (Shopify, 2025), 40% fewer returns (Shopify AR Study, 2023), 30% sales bump (Onix, 2025).",
-    icon: Smartphone,
+      "No modern phone required. Customers upload a room photo, place your 3D products inside it, resize, rotate, and save. Works on every device.",
+    icon: Monitor,
+  },
+  {
+    number: "03",
+    title: "AI Room Analysis",
+    description:
+      "Customer uploads a room photo and AI analyzes lighting, style, and space to recommend which products fit and how to place them. Powered by Gemini Vision (Full & Enterprise).",
+    icon: Sparkles,
   },
   {
     number: "04",
-    title: "Cart Recovery",
+    title: "Semantic AI Search",
     description:
-      "Automated sequences for abandonment (75% avg, 83% for furniture) (Baymard, 2024/2025). Recovers 10% lost revenue (SellersCommerce, 2025).",
-    icon: TrendingUp,
-  },
-  {
-    number: "05",
-    title: "Newsletter System",
-    description:
-      "Email infrastructure returning $36 per $1 spent, with 3x more revenue from welcome sequences (Source: Klaviyo, 2024).",
-    icon: Mail,
-  },
-  {
-    number: "06",
-    title: "AI Chatbot",
-    description:
-      "Handles 80% of consumer interactions in 2025 (IBM, 2024), reduces support costs by 30%, responding under 3 seconds.",
-    icon: MessageSquare,
-  },
-  {
-    number: "07",
-    title: "Advanced Search & Filters",
-    description:
-      "Search users are 2-3x more likely to convert (Forrester, 2024), but 68% leave if search fails in seconds (Baymard, 2024).",
+      "Understands 'minimalist oak desk for small studio' not just 'desk.' Hybrid vector and lexical matching. Zero no-results states.",
     icon: Search,
   },
   {
-    number: "08",
-    title: "Blog & SEO Infrastructure",
+    number: "05",
+    title: "Voice Search",
     description:
-      "Organic search drives 53% traffic (BrightEdge, 2024). Blogging businesses secure 67% more leads (HubSpot, 2024).",
-    icon: FileText,
+      "Hands-free catalog search via Web Speech API, feeding directly into the semantic search engine.",
+    icon: Mic,
+  },
+  {
+    number: "06",
+    title: "Generative 3D Pipeline",
+    description:
+      "Admins upload a 2D product image and get a production-ready 3D model generated automatically (Enterprise only). Expand your catalog without a 3D artist.",
+    icon: Cpu,
+  },
+  {
+    number: "07",
+    title: "2-Stage Cart Recovery",
+    description:
+      "Automated emails at 1 hour and 24 hours after abandonment. 45% open rate, recovers up to 10% of lost revenue with zero ad spend (SellersCommerce, 2025).",
+    icon: TrendingUp,
+  },
+  {
+    number: "08",
+    title: "AI COO Dashboard",
+    description:
+      "Daily strategy briefings, sales velocity forecasting, inventory reorder alerts, and review sentiment analysis — all generated automatically for the store admin (Enterprise only).",
+    icon: LineChart,
   },
   {
     number: "09",
-    title: "Landing Pages",
+    title: "AR Snapshot Sharing",
     description:
-      "Convert at 3.5-5.2% vs 1.8-2.5% standard (COREPPC, 2026), generating 55% more leads with 10+ pages (HubSpot, 2024).",
-    icon: Palette,
+      "Customers capture a high-res screenshot of your product in their room and share it. Free user-generated marketing built into every session.",
+    icon: Share2,
   },
   {
     number: "10",
-    title: "Security Audit & Patch",
+    title: "Newsletter System",
     description:
-      "Mitigate critical flaws like CVE-2025-64459 Django SQL injection (rated 9.1/10 by Endor Labs, 2025) and secure against $200k average breach costs (IBM, 2024).",
-    icon: Lock,
+      "Full signup flow, welcome sequence, and list management. Email averages $36 return per $1 spent (Klaviyo, 2024).",
+    icon: Mail,
   },
   {
     number: "11",
-    title: "Multi-language & Multi-currency",
+    title: "Blog and SEO Infrastructure",
     description:
-      "76% prefer native language (CSA, 2024), driving up to a 12% increase in international conversion rates (Shopify, 2024).",
-    icon: Globe,
+      "CMS-connected blog with structured data, automatic sitemap, and meta control. 68% of online experiences start with search (BrightEdge, 2024).",
+    icon: FileText,
   },
   {
     number: "12",
-    title: "Admin Dashboard Upgrade",
+    title: "Security Audit and Patch",
     description:
-      "Optimized custom backends. $1 in UX design returns $100 (Forrester), boosting operations and speed.",
-    icon: Settings,
+      "Full vulnerability audit including Django CVE-2025-64459 — a critical SQL injection rated 9.1/10 disclosed in 2025. Included in every tier.",
+    icon: Lock,
   },
 ];
 

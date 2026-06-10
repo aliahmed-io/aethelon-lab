@@ -18,7 +18,7 @@ const PROJECTS: LabProject[] = [
   {
     title: "Minimalist Chair Configurator",
     description:
-      "Real-time material customization with instant reflections and dynamic lighting setups. Optimized for performance and buttery smooth rotations.",
+      "dynamic color variant gallery sync with 3D model viewer, featuring instant reflections and dynamic lighting setups. Optimized for performance and buttery smooth rotations.",
     loadTime: "< 1.5s",
     polygonBudget: "< 10K",
     tech: ["React Three Fiber", "WebGL", "TailwindCSS"],

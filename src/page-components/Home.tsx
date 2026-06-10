@@ -7,7 +7,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import FeaturesGrid from "@/components/FeaturesGrid";
 import PricingSection from "@/components/PricingSection";
-import ProcessSection from "@/components/ProcessSection";
 import WhyAethelon from "@/components/WhyAethelon";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import LabShowcase from "@/components/LabShowcase";
@@ -17,7 +16,6 @@ import FAQSection from "@/components/FAQSection";
 import EngagementProcess from "@/components/EngagementProcess";
 import MilestonePlan from "@/components/MilestonePlan";
 import TechStackShowcase from "@/components/TechStackShowcase";
-import ResourcesSection from "@/components/ResourcesSection";
 import PartnerIntegrations from "@/components/PartnerIntegrations";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -32,11 +30,9 @@ export default function Home() {
       <PricingSection />
       <EngagementProcess />
       <MilestonePlan />
-      <ProcessSection />
       <WhyAethelon />
       <TechStackShowcase />
       <PartnerIntegrations />
-      <ResourcesSection />
       <LabShowcase />
       <CaseStudiesSection />
       <BlogSection />

@@ -20,8 +20,8 @@ Start and monitor the Project Orchestrator to update the Aethelon agency website
 - Run cron to scan modified files and report progress
 - Start/restart Orchestrator when needed
 
-- Cron 1 (Progress Reporting): Task task-17 (every 8 mins)
-- Cron 2 (Liveness Check): Task task-19 (every 10 mins)
+- Cron 1 (Progress Reporting): Cancelled
+- Cron 2 (Liveness Check): Cancelled
 
 ## User Context
 

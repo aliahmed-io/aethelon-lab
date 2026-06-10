@@ -63,6 +63,25 @@ const RETAINER_TIERS = [
     ],
     bestFor: "Enterprise stores with complex needs and growth goals",
   },
+  {
+    name: "Enterprise Support",
+    price: "Custom",
+    period: "",
+    description:
+      "For custom platforms needing high-availability support",
+    highlights: [
+      "Dedicated engineer resources",
+      "Real-time Slack & Phone support",
+      "Custom SLA agreement",
+    ],
+    features: [
+      { icon: Shield, text: "Continuous security & vulnerability audits" },
+      { icon: MessageSquare, text: "Weekly alignment & advisory calls" },
+      { icon: Clock, text: "Guaranteed under-4-hour emergency responses" },
+      { icon: TrendingUp, text: "Custom dashboard maintenance" },
+    ],
+    bestFor: "Brands running custom storefronts with custom backends",
+  },
 ];
 
 const WHAT_IS_INCLUDED = [
@@ -275,7 +294,7 @@ export default function RetainerPage() {
         </div>
 
         {/* Retainer Tiers */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 items-stretch">
           {RETAINER_TIERS.map((tier, i) => (
             <RetainerTierCard key={tier.name} tier={tier} index={i} />
           ))}
@@ -330,8 +349,7 @@ export default function RetainerPage() {
                 What if I only need support sometimes?
               </h4>
               <p className="font-body text-[#F8F6F2]/70">
-                We offer hourly consulting at $150/hour for one-off requests.
-                Retainer hours are always cheaper per hour than consulting.
+                Consulting work outside the retainer scope is quoted per project.
               </p>
             </div>
 

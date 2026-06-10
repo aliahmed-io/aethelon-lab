@@ -49,7 +49,7 @@ const FAQ_CATEGORIES = [
     questions: [
       {
         q: "What are your pricing structures and retainers?",
-        a: "We offer three transparent tiers: Starter ($2,000 with $200/mo retainer), Core ($4,000 with $300/mo retainer), and Full ($5,000 with $500/mo retainer). Tiers align with feature inclusion.",
+        a: "We offer four transparent tiers: Starter ($2,500 with $200/mo retainer), Core ($4,500 with $300/mo retainer), Full ($6,000 with $500/mo retainer), and Enterprise ($10,000+ with custom retainer). Tiers align with feature inclusion.",
       },
       {
         q: "What is your milestone payment schedule?",

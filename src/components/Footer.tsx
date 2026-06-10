@@ -1,97 +1,86 @@
 /*
  * Footer — Aethelon Agency
- * Design: Minimalist luxury, warm brown background, elegant serif logo
+ * Design: Premium minimalist luxury, deep charcoal background, champagne-gold accents, type-safe navigation.
  */
-import { Mail, Linkedin, Twitter } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const scrollTo = (id: string) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = (href: string) => {
+    const isHomePage = window.location.pathname === "/";
+    if (href.startsWith("#")) {
+      if (isHomePage) {
+        const el = document.querySelector(href);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+      }
+      window.location.href = "/" + href;
+    } else {
+      window.location.href = href;
+    }
   };
 
   return (
-    <footer className="bg-[#141312] text-[#F8F6F2] section-spacing">
+    <footer className="bg-[#141312] text-[#F8F6F2] section-spacing border-t border-[#F8F6F2]/5">
       <div className="container">
         <div
-          className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 pb-16"
+          className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16 pb-16"
           style={{ borderBottom: "1px solid rgba(245,240,232,0.1)" }}
         >
           {/* Brand */}
-          <div>
-            <h3 className="font-display text-xl text-[#F8F6F2] mb-4">
+          <div className="col-span-1 md:col-span-6">
+            <h3 className="font-display text-2xl font-bold text-[#F8F6F2] mb-4 tracking-tight">
               AETHELON
             </h3>
-            <p className="font-body text-sm text-[#F8F6F2]/50 leading-relaxed">
+            <p className="font-body text-sm text-[#F8F6F2]/50 leading-relaxed max-w-sm">
               Headless ecommerce agency specializing in custom platforms with
               AR/3D, AI, and lifecycle automation.
             </p>
           </div>
 
-          {/* Services */}
-          <div>
-            <p className="font-label text-[#C5A880] mb-4">Services</p>
-            <ul className="space-y-2">
+          {/* Navigation */}
+          <div className="col-span-1 md:col-span-3">
+            <p className="font-label text-xs tracking-wider text-[#C5A880] uppercase mb-4 font-semibold">
+              Navigation
+            </p>
+            <ul className="space-y-3">
               {[
-                "Headless Storefronts",
-                "Full Custom Platforms",
-                "AR & 3D Layer",
-                "AI Intelligence",
-                "Lifecycle Automation",
+                { label: "Features", href: "#features" },
+                { label: "Our Process", href: "#process" },
+                { label: "Pricing", href: "#pricing" },
+                { label: "Contact", href: "#contact" },
               ].map(item => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="font-body text-sm text-[#F8F6F2]/60 hover:text-[#F8F6F2] transition-colors"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <p className="font-label text-[#C5A880] mb-4">Company</p>
-            <ul className="space-y-2">
-              {["About", "Process", "Pricing", "Contact"].map(item => (
-                <li key={item}>
+                <li key={item.label}>
                   <button
-                    onClick={() => scrollTo(`#${item.toLowerCase()}`)}
-                    className="font-body text-sm text-[#F8F6F2]/60 hover:text-[#F8F6F2] transition-colors text-left"
+                    onClick={() => handleNavClick(item.href)}
+                    className="font-body text-sm text-[#F8F6F2]/60 hover:text-[#F8F6F2] transition-colors text-left cursor-pointer"
                   >
-                    {item}
+                    {item.label}
                   </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Social */}
-          <div>
-            <p className="font-label text-[#C5A880] mb-4">Connect</p>
-            <div className="flex items-center gap-4">
-              <a
-                href="#"
-                className="w-8 h-8 flex items-center justify-center border border-[#F8F6F2]/20 hover:border-[#C5A880] transition-colors"
-              >
-                <Mail size={14} />
-              </a>
-              <a
-                href="#"
-                className="w-8 h-8 flex items-center justify-center border border-[#F8F6F2]/20 hover:border-[#C5A880] transition-colors"
-              >
-                <Linkedin size={14} />
-              </a>
-              <a
-                href="#"
-                className="w-8 h-8 flex items-center justify-center border border-[#F8F6F2]/20 hover:border-[#C5A880] transition-colors"
-              >
-                <Twitter size={14} />
-              </a>
-            </div>
+          {/* Connect */}
+          <div className="col-span-1 md:col-span-3">
+            <p className="font-label text-xs tracking-wider text-[#C5A880] uppercase mb-4 font-semibold">
+              Connect
+            </p>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="mailto:ali@aethelonlabs.com"
+                  className="font-body text-sm text-[#F8F6F2]/60 hover:text-[#F8F6F2] transition-colors flex items-center gap-2 group"
+                >
+                  <Mail size={14} className="text-[#C5A880] group-hover:scale-110 transition-transform duration-300" />
+                  ali@aethelonlabs.com
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -100,20 +89,6 @@ export default function Footer() {
           <p className="font-body text-xs text-[#F8F6F2]/40">
             © {currentYear} Aethelon. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <a
-              href="#"
-              className="font-body text-xs text-[#F8F6F2]/40 hover:text-[#F8F6F2] transition-colors"
-            >
-              Privacy
-            </a>
-            <a
-              href="#"
-              className="font-body text-xs text-[#F8F6F2]/40 hover:text-[#F8F6F2] transition-colors"
-            >
-              Terms
-            </a>
-          </div>
         </div>
       </div>
     </footer>
